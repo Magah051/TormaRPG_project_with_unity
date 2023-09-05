@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    //Esse script controlará todos os tipos de Players
     public Animator playerAnimator;
     float input_x = 0;
     float input_y = 0;
@@ -33,6 +34,7 @@ public class PlayerController : MonoBehaviour
 
         playerAnimator.SetBool("isWalking", isWalking);
 
+        //O "hero" não possui ataque por enquanto (05/09/2023)
         if (Input.GetButtonDown("Fire1"))
             playerAnimator.SetTrigger("attack");
     }
