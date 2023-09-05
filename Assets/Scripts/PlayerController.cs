@@ -3,13 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(Player))]
 public class PlayerController : MonoBehaviour
 {
-    //Esse script controlará todos os tipos de Players
+    public Player player;
+
     public Animator playerAnimator;
     float input_x = 0;
     float input_y = 0;
-    public float speed = 2.5f;
+
     bool isWalking = false;
     Rigidbody2D rb2D;
     Vector2 movement = Vector2.zero;
@@ -19,6 +21,7 @@ public class PlayerController : MonoBehaviour
     {
         isWalking = false;
         rb2D = GetComponent<Rigidbody2D>();
+        player = GetComponent<Player>();
     }
 
     // Update is called once per frame
@@ -44,6 +47,6 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb2D.MovePosition(rb2D.position + movement * speed * Time.fixedDeltaTime);
+        rb2D.MovePosition(rb2D.position + movement * player.entity.speed * Time.fixedDeltaTime);
     }
 }
