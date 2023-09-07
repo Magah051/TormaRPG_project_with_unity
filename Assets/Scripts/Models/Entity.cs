@@ -8,6 +8,7 @@ public class Entity
 {
     [Header("Name")]
     public string name;
+    public int level;
 
     [Header("Health")]
     public int currentHealth;
@@ -24,8 +25,9 @@ public class Entity
     [Header("Stats")]
     public int strength = 1;
     public int resistence = 1;
+    public int intelligence = 1;
+    public int willpower = 1;
     public int damage = 1;
     public int defense = 1;
     public float speed = 2f;
-
 }
