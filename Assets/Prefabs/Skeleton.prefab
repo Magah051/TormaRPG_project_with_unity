@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 2021207018505546409}
   - component: {fileID: 5442667614066503919}
   - component: {fileID: 3330943289438474085}
+  - component: {fileID: 71512885404136012}
+  - component: {fileID: 1080627053917945459}
   m_Layer: 0
   m_Name: Skeleton
   m_TagString: Enemy
@@ -27,7 +29,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7492671814184229326}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.351, y: 0.629, z: 0}
   m_LocalScale: {x: 0.32, y: 0.32, z: 1}
   m_ConstrainProportionsScale: 0
@@ -180,3 +182,83 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!70 &71512885404136012
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7492671814184229326}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 2.8, y: 2.8}
+  m_Direction: 0
+--- !u!114 &1080627053917945459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7492671814184229326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1314ab60076bf0944be3f0f83ffa488b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  entity:
+    name: Skeleton
+    level: 1
+    currentHealth: 100
+    maxHealth: 100
+    currentMana: 100
+    maxMana: 100
+    currentStamina: 100
+    maxStamina: 100
+    strength: 2
+    resistence: 2
+    intelligence: 1
+    willpower: 1
+    damage: 2
+    defense: 2
+    speed: 3
+    attackDistance: 0.5
+    attackTimer: 1
+    cooldown: 2
+    inCombat: 0
+    target: {fileID: 0}
+    combatCoroutine: 0
+    dead: 0
+  manager: {fileID: 0}
+  waypointList: []
+  arrivalDistance: 0.5
+  waitTime: 5
+  rewardExperience: 10
+  lootGoldMin: 0
+  lootGoldMax: 10
+  prefab: {fileID: 7492671814184229326}
+  respawn: 1
+  respawnTime: 10
