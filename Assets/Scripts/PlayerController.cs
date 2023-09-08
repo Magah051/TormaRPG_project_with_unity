@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     bool isWalking = false;
     Rigidbody2D rb2D;
     Vector2 movement = Vector2.zero;
+    public static PlayerController instance;
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +23,17 @@ public class PlayerController : MonoBehaviour
         isWalking = false;
         rb2D = GetComponent<Rigidbody2D>();
         player = GetComponent<Player>();
+
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject); // Mantém o GameObject do jogador entre cenas
+        }
+        else
+        {
+            Destroy(gameObject); // Destroi qualquer duplicata
+        }
+
     }
 
     // Update is called once per frame
