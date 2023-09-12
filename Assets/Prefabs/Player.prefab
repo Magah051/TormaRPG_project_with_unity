@@ -244,6 +244,8 @@ MonoBehaviour:
   mana: {fileID: 0}
   stamina: {fileID: 0}
   exp: {fileID: 0}
+  respawnTime: 2
+  prefab: {fileID: 5222890934829669395}
 --- !u!70 &2314936708819615203
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

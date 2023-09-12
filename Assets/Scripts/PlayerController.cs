@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour
         rb2D = GetComponent<Rigidbody2D>();
         player = GetComponent<Player>();
 
-        if (instance == null)
+        /*if (instance == null)
         {
             instance = this;
             DontDestroyOnLoad(gameObject); // Mantém o GameObject do jogador entre cenas
@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour
         else
         {
             Destroy(gameObject); // Destroi qualquer duplicata
-        }
+        }*/
 
     }
 
@@ -52,13 +52,74 @@ public class PlayerController : MonoBehaviour
 
         playerAnimator.SetBool("isWalking", isWalking);
 
-        //O "hero" não possui ataque por enquanto (05/09/2023)
-        if (Input.GetButtonDown("Fire1"))
-            playerAnimator.SetTrigger("attack");
+
+        if (player.entity.attackTimer < 0)
+            player.entity.attackTimer = 0;
+        else
+            player.entity.attackTimer -= Time.deltaTime;
+
+        if (player.entity.attackTimer == 0 && !isWalking)
+        {
+            if (Input.GetButtonDown("Fire1"))
+            {
+                playerAnimator.SetTrigger("attack");
+                player.entity.attackTimer = player.entity.cooldown;
+
+                Attack();
+            }
+        }
+  
     }
 
     private void FixedUpdate()
     {
         rb2D.MovePosition(rb2D.position + movement * player.entity.speed * Time.fixedDeltaTime);
+    }
+
+    private void OnTriggerStay2D(Collider2D collider)
+    {
+        if (collider.transform.tag == "Enemy")
+        {
+            player.entity.target = collider.transform.gameObject;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collider)
+    {
+        if (collider.transform.tag == "Enemy")
+        {
+            player.entity.target = null;
+        }
+    }
+
+    void Attack()
+    {
+        if (player.entity.target == null)
+            return;
+
+        Monster monster = player.entity.target.GetComponent<Monster>();
+
+
+        if (monster.entity.dead)
+        {
+            player.entity.target = null;
+        }
+
+        float distance = Vector2.Distance(transform.position, player.entity.target.transform.position);
+
+        if (distance <= player.entity.attackDistance)
+        {
+            int dmg = player.manager.CalculateDamage(player.entity, player.entity.damage);
+            int enemyDef = player.manager.CalculateDefense(monster.entity, monster.entity.defense);
+            int result = dmg - enemyDef;
+
+            if (result < 0)
+                result = 0;
+
+            Debug.Log("Player dmg: " + result.ToString());
+            monster.entity.currentHealth -= result;
+            monster.entity.target = this.gameObject;
+
+        }
     }
 }
