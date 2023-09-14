@@ -222,7 +222,8 @@ public class Monster : MonoBehaviour
         animator.SetBool("isWalking", false);
 
         // add exp no player
-        //manager.GainExp(rewardExperience);
+        Player player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+        player.GainExp(rewardExperience);
 
         Debug.Log("O inimigo morreu: " + entity.name);
 

@@ -723,9 +723,9 @@ MonoBehaviour:
     resistence: 2
     intelligence: 1
     willpower: 1
-    damage: 2
+    damage: 1
     defense: 2
-    speed: 1.8
+    speed: 2
     attackDistance: 0.5
     attackTimer: 1
     cooldown: 2
@@ -733,6 +733,7 @@ MonoBehaviour:
     target: {fileID: 0}
     combatCoroutine: 0
     dead: 0
+    entityAudio: {fileID: 0}
   manager: {fileID: 0}
   waypointList:
   - {fileID: 0}
@@ -740,7 +741,7 @@ MonoBehaviour:
   arrivalDistance: 0.5
   waitTime: 5
   waypontID: 1
-  rewardExperience: 10
+  rewardExperience: 100
   lootGoldMin: 0
   lootGoldMax: 10
   prefab: {fileID: 7492671814184229326}

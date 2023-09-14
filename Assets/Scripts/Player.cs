@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -23,6 +24,16 @@ public class Player : MonoBehaviour
     public Slider mana;
     public Slider stamina;
     public Slider exp;
+    public Text expText;
+    public Text levelText;
+
+    [Header("Exp")]
+    public int currentExp;
+    public int expBase;
+    public int expLeft;
+    public float expMode;
+    public GameObject levelUpFx;
+    public AudioClip levelUpSound;
 
     [Header("Respawn")]
     public float respawnTime = 5;
@@ -54,7 +65,11 @@ public class Player : MonoBehaviour
         stamina.maxValue = entity.maxStamina;
         stamina.value = stamina.maxValue;
 
-        exp.value = 0;
+        exp.value = currentExp;
+        exp.maxValue = expLeft;
+
+        expText.text = String.Format("Exp: {0}/{1}", currentExp, expLeft);
+        levelText.text = entity.level.ToString();
 
         // iniciar o regenhealth
         StartCoroutine(RegenHealth());
@@ -74,6 +89,11 @@ public class Player : MonoBehaviour
         health.value = entity.currentHealth;
         mana.value = entity.currentMana;
         stamina.value = entity.currentStamina;
+
+        exp.value = currentExp;
+        exp.maxValue = expLeft;
+        expText.text = String.Format("Exp: {0}/{1}", currentExp, expLeft);
+        levelText.text = entity.level.ToString();
     }
 
     IEnumerator RegenHealth()
@@ -147,6 +167,28 @@ public class Player : MonoBehaviour
         newPlayer.GetComponent<PlayerController>().enabled = true;
 
         Destroy(this.gameObject);
+    }
+    
+    public void GainExp(int amount)
+    {
+        currentExp += amount;
+        if (currentExp >= expLeft)
+        {
+            levelUp();
+        }
+    }
+    public void levelUp()
+    {
+        currentExp = -expLeft;
+        entity.level++;
+
+        entity.currentHealth = entity.maxHealth;
+
+        float newExp = Mathf.Pow((float) expMode, entity.level);
+        expLeft = (int)Mathf.Floor((float)expBase * newExp);
+
+        entity.entityAudio.PlayOneShot(levelUpSound);
+        Instantiate(levelUpFx, this.gameObject.transform);
     }
 
 }
