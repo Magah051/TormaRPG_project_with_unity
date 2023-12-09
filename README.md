@@ -22,14 +22,14 @@ Os jogadores assumem o papel de um personagem fictício e embarcam em uma jornad
 Além disso, os RPGs top-down frequentemente apresentam sistemas de combate táticos, onde os jogadores podem enfrentar inimigos, adquirir habilidades e progredir em níveis para fortalecer seus personagens. A distribuição de atributos, a personalização do personagem e a exploração do mundo são elementos-chave que tornam os RPGs nesse estilo envolventes e cativantes para os jogadores.
 
 ## Detalhes
-- Animação de Personagem: Apresentamos animações fluidas e realistas para dar vida ao seu personagem, tornando a experiência de jogo mais imersiva.
-- Movimentação em Top-Down: Desenvolvemos uma movimentação intuitiva em estilo top-down, permitindo aos jogadores explorar o mundo do jogo de forma fácil e natural.
-- Criação de Mapas com Tilesets e Paletas: Utilizamos tilesets e paletas para criar mapas detalhados e visualmente atraentes, proporcionando um ambiente rico e variado.
-- Interface UI com Atributos: Implementamos uma interface de usuário (UI) que exibe atributos essenciais do jogador, oferecendo uma visão clara do progresso e das características do personagem.
-- Mecânicas de Inimigos e Combates: Introduzimos mecânicas de combate emocionantes, desafiando os jogadores a enfrentar inimigos variados e aprimorar suas habilidades estratégicas.
+- Animação de Personagem: Animações fluidas e realistas para dar vida ao seu personagem, tornando a experiência de jogo mais imersiva.
+- Movimentação em Top-Down: Movimentação intuitiva em estilo top-down, permitindo aos jogadores explorar o mundo do jogo de forma fácil e natural.
+- Criação de Mapas com Tilesets e Paletas: Utilização de tilesets e paletas para criar mapas detalhados e visualmente atraentes, proporcionando um ambiente rico e variado.
+- Interface UI com Atributos: Implementação de uma interface de usuário (UI) que exibe atributos essenciais do jogador, oferecendo uma visão clara do progresso e das características do personagem.
+- Mecânicas de Inimigos e Combates: Introdução de mecânicas de combate emocionantes, desafiando os jogadores a enfrentar inimigos variados e aprimorar suas habilidades estratégicas.
 - Movimentação de Inimigos Baseadas em Endpoints: Os inimigos se movem de maneira inteligente com base em endpoints, proporcionando um desafio dinâmico aos jogadores.
-- LevelUP e Distribuição de Atributos: Implementamos um sistema de progressão, permitindo que os jogadores subam de nível e distribuam atributos para personalizar seu personagem.
-- Teletransporte: Adicionamos a funcionalidade de teletransporte, facilitando a locomoção do jogador entre diferentes áreas do jogo.
+- LevelUP e Distribuição de Atributos: Implementação de um sistema de progressão, permitindo que os jogadores subam de nível e distribuam atributos para personalizar seu personagem.
+- Teletransporte: Adição de funcionalidade de teletransporte, facilitando a locomoção do jogador entre diferentes áreas do jogo.
 - Sistema de Pets: Explore a companhia de pets, introduzindo uma camada adicional de estratégia e personalização na jornada do jogador.
 
 ## Instalação
