@@ -41,6 +41,7 @@ Este jogo não há a necessidade de instalação. Baixe no link disponível, ext
 - Use a tecla "e" ao entrar na cabana para teletransportar;
 
 ## Interface do Jogo
+![ezgif-3-90396538d6](https://github.com/Magah051/TormaRPG_project_with_unity/assets/31749933/a660ba15-daa1-4cf3-a21b-3eb4af0494f6)
 
 
 Este projeto é um ponto de partida ideal para desenvolvedores interessados em construir jogos RPG na Unity. Fique à vontade para explorar, contribuir e adaptar conforme necessário para seus próprios projetos. Boa jornada no mundo que criamos e que seus códigos sejam sempre robustos e suas aventuras épicas! 🎮✨
